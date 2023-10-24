@@ -5,6 +5,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const List<String> filters = ['All' 'Addidas', 'Nike', 'Bata'];
+
     const border = OutlineInputBorder(
       borderSide: BorderSide(
         color: Color.fromRGBO(225, 225, 225, 1),
@@ -14,11 +16,11 @@ class HomePage extends StatelessWidget {
       ),
     );
 
-    return const Scaffold(
+    return Scaffold(
         body: SafeArea(
       child: Column(
         children: [
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
@@ -42,7 +44,11 @@ class HomePage extends StatelessWidget {
               ),
             ],
           ),
-          c
+          const SizedBox(height: 20),
+          ListView.builder(
+            itemCount: filters.length,
+            itemBuilder: (BuildContext context, index) {},
+          )
         ],
       ),
     ));
