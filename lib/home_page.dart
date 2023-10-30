@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/global_variable.dart';
+import 'package:shop_app/product_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -8,7 +10,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final List<String> filters = ['All', 'Addidas', 'Nike', 'Beta'];
+  final List<String> filters = ['All', 'Addidas', 'Nike', 'Bata'];
   late String selectedFilter;
 
   @override
@@ -82,13 +84,27 @@ class _HomePageState extends State<HomePage> {
                       label: Text(filter),
                       labelStyle: const TextStyle(fontSize: 15),
                       backgroundColor: selectedFilter == filter
-                          ? const Color.fromARGB(255, 254, 254, 2)
+                          ? Theme.of(context).colorScheme.primary
                           : const Color.fromRGBO(245, 247, 249, 1),
                       padding: const EdgeInsets.symmetric(
                         vertical: 15,
                         horizontal: 20,
                       ),
                     ),
+                  ),
+                );
+              },
+            ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: products.length,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ProductCard(
+                    title: products[index]['title'].toString(),
+                    price: double.parse('${products[index]['price']}'),
                   ),
                 );
               },

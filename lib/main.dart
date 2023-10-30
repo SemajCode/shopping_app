@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: const Color.fromARGB(255, 254, 254, 2),
+          primary: const Color.fromARGB(255, 254, 254, 2),
         ),
         fontFamily: 'Noto-Sans',
         inputDecorationTheme: const InputDecorationTheme(
