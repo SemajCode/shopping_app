@@ -20,11 +20,21 @@ class MyApp extends StatelessWidget {
         ),
         fontFamily: 'Noto-Sans',
         inputDecorationTheme: const InputDecorationTheme(
-            hintStyle: TextStyle(
-              fontSize: 16,
+          hintStyle: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+          prefixIconColor: Color.fromRGBO(119, 119, 119, 1),
+        ),
+        textTheme: const TextTheme(
+            titleMedium: TextStyle(
+              fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
-            prefixIconColor: Color.fromRGBO(119, 119, 119, 1)),
+            bodySmall: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            )),
       ),
       home: const HomePage(),
     );

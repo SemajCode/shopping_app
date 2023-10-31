@@ -100,12 +100,16 @@ class _HomePageState extends State<HomePage> {
             child: ListView.builder(
               itemCount: products.length,
               itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ProductCard(
-                    title: products[index]['title'].toString(),
-                    price: double.parse('${products[index]['price']}'),
-                  ),
+                final product = products[index];
+                var color = const Color.fromRGBO(245, 247, 249, 1);
+                if (index.isEven) {
+                  color = const Color.fromRGBO(216, 240, 253, 1);
+                }
+                return ProductCard(
+                  title: product['title'] as String,
+                  price: product['price'] as double,
+                  image: product['imageUrl'] as String,
+                  backgroundColor: color,
                 );
               },
             ),
