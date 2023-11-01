@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/global_variable.dart';
 import 'package:shop_app/home_page.dart';
 import 'package:shop_app/product_details.dart';
 
@@ -28,16 +29,31 @@ class MyApp extends StatelessWidget {
           prefixIconColor: Color.fromRGBO(119, 119, 119, 1),
         ),
         textTheme: const TextTheme(
-            titleMedium: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-            bodySmall: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-            )),
+          titleMedium: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+          bodySmall: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+          titleLarge: TextStyle(
+            fontSize: 35,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        appBarTheme: const AppBarTheme(
+          centerTitle: true,
+          titleTextStyle: TextStyle(
+            color: Colors.black,
+            fontSize: 20,
+          ),
+        ),
+        useMaterial3: true,
       ),
-      home: const ProductDetails(),
+      home: ProductDetails(
+        product: products[1],
+      ),
     );
   }
 }

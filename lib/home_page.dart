@@ -34,18 +34,13 @@ class _HomePageState extends State<HomePage> {
         body: SafeArea(
       child: Column(
         children: [
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                'Shoes\nCollection',
-                style: TextStyle(
-                  fontSize: 35,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(width: 8),
-              Expanded(
+              Text('Shoes\nCollection',
+                  style: Theme.of(context).textTheme.titleLarge),
+              const SizedBox(width: 8),
+              const Expanded(
                 child: TextField(
                   decoration: InputDecoration(
                     border: border,
