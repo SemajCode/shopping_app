@@ -27,6 +27,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
+        selectedFontSize: 0,
+        unselectedFontSize: 0,
+        iconSize: 35,
         currentIndex: currentPage,
         onTap: (value) {
           setState(() {
@@ -48,7 +51,10 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: pages[currentPage],
+      body: IndexedStack(
+        index: currentPage,
+        children: pages,
+      ),
     );
   }
 }
