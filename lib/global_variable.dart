@@ -39,7 +39,7 @@ final cart = [
     'title': 'Bata Women\'s shoe',
     'price': 11.25,
     'company': 'Bata',
-    'sizes': 9,
+    'size': 9,
     'imageUrl': 'assets/images/shoe4.png',
   },
 ];

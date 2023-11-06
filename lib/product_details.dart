@@ -18,8 +18,29 @@ class _ProductDetailsState extends State<ProductDetails> {
   int selectedSize = 0;
 
   void onTap() {
-    Provider.of<CartProvider>(context, listen: false)
-        .addProduct(widget.product);
+    if (selectedSize != 0) {
+      Provider.of<CartProvider>(context, listen: false).addProduct(
+        {
+          'id': widget.product['id'],
+          'title': widget.product['title'],
+          'price': widget.product['price'],
+          'company': widget.product['company'],
+          'size': selectedSize,
+          'imageUrl': widget.product['imageUrl'],
+        },
+      );
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Product added successfully!'),
+        ),
+      );
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Please pick a size!'),
+        ),
+      );
+    }
   }
 
   @override

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/card_page.dart';
+import 'package:shop_app/cart_page.dart';
 import 'package:shop_app/product_list.dart';
 
 class HomePage extends StatefulWidget {
@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage> {
 
   var currentPage = 0;
 
-  final List<Widget> pages = const [ProductList(), CardPage()];
+  final List<Widget> pages = const [ProductList(), CartPage()];
 
   @override
   void initState() {
