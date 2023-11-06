@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/card_page.dart';
 import 'package:shop_app/product_list.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,6 +14,8 @@ class _HomePageState extends State<HomePage> {
   late String selectedFilter;
 
   var currentPage = 0;
+
+  final List<Widget> pages = const [ProductList(), CardPage()];
 
   @override
   void initState() {
@@ -45,7 +48,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: const ProductList(),
+      body: pages[currentPage],
     );
   }
 }
