@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/product_card.dart';
-import 'package:shop_app/product_details.dart';
+import 'package:shop_app/widgets/product_card.dart';
+import 'package:shop_app/pages/product_details.dart';
 import 'global_variable.dart';
 
 class ProductList extends StatefulWidget {
