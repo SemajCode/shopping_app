@@ -58,7 +58,10 @@ class _ProductDetailsState extends State<ProductDetails> {
             style: Theme.of(context).textTheme.titleLarge,
           ),
           const Spacer(),
-          Image.asset(widget.product['imageUrl'] as String),
+          Image.asset(
+            widget.product['imageUrl'] as String,
+            height: 250,
+          ),
           const Spacer(
             flex: 2,
           ),
@@ -112,7 +115,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                     onPressed: onTap,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Theme.of(context).colorScheme.primary,
-                      minimumSize: const Size(double.infinity, 50),
+                      fixedSize: const Size(350, 50),
                     ),
                     label: const Text(
                       'Add to cart',
